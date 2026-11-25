@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Odesli Link Converter</title>
+    <title>Privacy Policy - Odesli Link Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,45 +21,55 @@
     </style>
 </head>
 <body>
-    <h1>Privacy Policy - Odesli Link Converter</h1>
-    <p><strong>Last updated:</strong> July 11, 2025</p>
-    
+    <h1>Privacy Policy - Odesli Link Generator</h1>
+    <p><strong>Last updated:</strong> November 25, 2026</p>
+
     <h2>Information We Collect</h2>
-    <p>This Chrome extension does not collect, store, or transmit any personal information. The extension only:</p>
+    <p>This Chrome extension does not collect personal information and has no server of its own. Nothing is sent to the developer. The extension only acts when you click its icon or one of its right-click entries, and then it:</p>
     <ul>
-        <li>Reads the current tab URL when you click the convert button</li>
-        <li>Sends this URL to the Odesli API (song.link) for music link conversion</li>
-        <li>Displays the converted universal link to you</li>
-        <li>Temporarily stores conversion history locally in your browser</li>
+        <li>Reads the URL of the current tab or of the link you right-clicked</li>
+        <li>Opens song.link with this music URL to look up the universal song.link page</li>
+        <li>For "Copy Apple Music link": loads the Spotify track page to read the track title and artist, then searches Apple's public iTunes Search API with title and artist</li>
+        <li>For "Copy Spotify link": looks up the Apple Music track ID in Apple's public iTunes Search API and builds a Spotify search link from title and artist</li>
+        <li>Copies the result to your clipboard and shows a short confirmation on the current page</li>
+        <li>Stores the last 50 conversions locally in your browser</li>
     </ul>
-    
+
     <h2>Data Usage</h2>
-    <p>The Odesli Link Converter extension:</p>
+    <p>The Odesli Link Generator extension:</p>
     <ul>
         <li>Does not collect or store personal data</li>
         <li>Does not track user behavior or analytics</li>
         <li>Does not use cookies</li>
-        <li>Only processes music URLs for conversion purposes</li>
-        <li>Does not share data with third parties (except Odesli API)</li>
+        <li>Only processes music links for the conversion you requested</li>
+        <li>Does not share data with third parties, except the music link, track title and artist sent to the services below to perform that conversion</li>
     </ul>
-    
+
     <h2>Third-Party Services</h2>
-    <p>This extension uses the Odesli API (song.link) to convert music links between streaming platforms. When you convert a link, the URL is sent to Odesli's servers for processing. Please refer to <a href="https://odesli.co">Odesli's privacy policy</a> for information about their data handling practices.</p>
-    
+    <ul>
+        <li><strong>song.link by Odesli:</strong> When you convert a link, the music URL is sent to song.link, which redirects to the matching song.link page.</li>
+        <li><strong>Apple iTunes Search API (itunes.apple.com):</strong> Track title and artist, or the Apple Music track ID, are sent to Apple's public search to find the matching track. The store country is taken from your browser language.</li>
+        <li><strong>Spotify (open.spotify.com):</strong> The public Spotify track page is loaded to read the track title and artist.</li>
+    </ul>
+    <p>Please refer to the privacy policies of Odesli, Apple and Spotify for information about their data handling practices.</p>
+
     <h2>Permissions Used</h2>
     <ul>
-        <li><strong>activeTab:</strong> To read the current tab's URL for conversion</li>
-        <li><strong>storage:</strong> To save user preferences locally</li>
-        <li><strong>host_permissions:</strong> To communicate with the Odesli API</li>
+        <li><strong>activeTab:</strong> To read the URL of the current music page when you click the icon</li>
+        <li><strong>contextMenus:</strong> To add the right-click entries "Copy song.link", "Copy Apple Music link" and "Copy Spotify link"</li>
+        <li><strong>scripting:</strong> To copy the converted link and show a short confirmation on the current page</li>
+        <li><strong>clipboardWrite:</strong> To copy the converted link to the clipboard</li>
+        <li><strong>storage:</strong> To keep the local history of the last 50 conversions</li>
+        <li><strong>host_permissions:</strong> To reach song.link, album.link and artist.link, the Spotify track page on open.spotify.com and Apple's iTunes Search API on itunes.apple.com</li>
     </ul>
-    
+
     <h2>Data Security</h2>
-    <p>All data processing happens locally in your browser or through secure HTTPS connections to the Odesli API. No sensitive information is stored or transmitted.</p>
-    
+    <p>All processing happens in your browser. Requests go directly over HTTPS to song.link, open.spotify.com and itunes.apple.com. No sensitive information is stored or transmitted.</p>
+
     <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, please contact us through the Chrome Web Store developer contact information.</p>
-    
+    <p>If you have questions about this privacy policy, please contact the developer through the contact information on the Chrome Web Store listing.</p>
+
     <h2>Changes to This Policy</h2>
-    <p>We may update this privacy policy from time to time. Any changes will be reflected in the "Last updated" date above.</p>
+    <p>This privacy policy may be updated from time to time. Any changes will be reflected in the "Last updated" date above.</p>
 </body>
 </html>
